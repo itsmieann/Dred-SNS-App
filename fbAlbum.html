@@ -13,10 +13,10 @@
   <script type="text/javascript">
     $(function() {
       var opts = {
-         tabs : 5,
+         tabs : 3,
          imagePath : "../icons-ios/",
-         icons : ["music", "pictures", "docs", "recipes", "top_rated"],
-         labels : ["Album", "Tag Photos", "Photos shared", "Name", "Name"],
+         icons : ["album", "tag", "shared" ],
+         labels : ["Album", "Tag Photos", "Photos shared"],
          selected : 1
       };
       $.UITabbar(opts);
@@ -40,20 +40,14 @@
     .isiOS .tabbar > button:hover > .icon {
       background-color: #007aff;
     }
-    .tabbar > button.music > .icon  {
+    .tabbar > button.album > .icon  {
       -webkit-mask-image: url('images/icons/Head_phones.svg');
     }
-    .tabbar > button.pictures > .icon  {
+    .tabbar > button.tag > .icon  {
       -webkit-mask-image: url('images/icons/Camera.svg');
     }
-    .tabbar > button.docs > .icon {
+    .tabbar > button.shared > .icon {
       -webkit-mask-image: url('images/icons/Documents.svg');
-    }
-    .tabbar > button.recipes > .icon  {
-      -webkit-mask-image: url('images/icons/Download.svg');
-    }
-    .tabbar > button.top_rated > .icon {
-      -webkit-mask-image: url('images/icons/Favorite.svg');
     }
     .grid > .col {
       background-repeat: no-repeat;
@@ -124,7 +118,7 @@
     <h1>Album</h1>    
     <img src="images/DredLogo.png" alt="logo" width="50px" float="right" margin-top="30px">
   </nav>
-  <article id='music' class='next'>
+  <article id='album' class='next'>
     <section>
       <div class="grid no-wrap">
         <div class="col flex-1" style="background-image: url('pics/pic-01.jpg')"></div>
@@ -178,7 +172,7 @@
     <h1>Album</h1>    
     <img src="images/DredLogo.png" alt="logo" width="50px" float="right" margin-top="30px">
   </nav>
-  <article id='pictures' class='next'>
+  <article id='tag' class='next'>
     <section>
       <div class="grid no-wrap">
         <div class="col flex-1" style="background-image: url('pics/pic-01.jpg')"></div>
@@ -232,7 +226,7 @@
     <h1>Album</h1>    
     <img src="images/DredLogo.png" alt="logo" width="50px" float="right" margin-top="30px">
   </nav>
-  <article id='documents' class='next'>
+  <article id='shared' class='next'>
     <section>
       <div class="grid no-wrap">
         <div class="col flex-1" style="background-image: url('pics/pic-01.jpg')"></div>
@@ -281,113 +275,6 @@
       </div>
     </section>
   </article>
-  <nav class='next'>
-    <img src="images/fb.png" alt="logo" width="50px" float="left" margin-top="30px">&nbsp;&nbsp;  
-    <h1>Album</h1>    
-    <img src="images/DredLogo.png" alt="logo" width="50px" float="right" margin-top="30px">
-  </nav>
-  <article id='recipes' class='next'>
-    <section>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-01.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-02.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-03.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-04.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-05.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-06.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-07.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-08.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-09.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-10.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-11.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-12.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-13.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-14.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-15.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-16.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-17.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-18.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-19.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-20.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-21.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-22.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-23.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-24.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-25.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-26.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-27.jpg')"></div>
-      </div>
-    </section>
-  </article>
-  <nav class='next'>
-    <img src="images/fb.png" alt="logo" width="50px" float="left" margin-top="30px">&nbsp;&nbsp;  
-    <h1>Album</h1>    
-    <img src="images/DredLogo.png" alt="logo" width="50px" float="right" margin-top="30px">
-  </nav>
-  <article id='favorites' class='next'>
-    <section>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-01.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-02.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-03.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-04.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-05.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-06.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-07.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-08.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-09.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-10.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-11.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-12.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-13.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-14.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-15.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-16.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-17.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-18.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-19.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-20.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-21.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-22.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-23.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-24.jpg')"></div>
-      </div>
-      <div class="grid no-wrap">
-        <div class="col flex-1" style="background-image: url('pics/pic-25.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-26.jpg')"></div>
-        <div class="col flex-1" style="background-image: url('pics/pic-27.jpg')"></div>
-      </div>
-    </section>
   </article>
 </body>
 </html>

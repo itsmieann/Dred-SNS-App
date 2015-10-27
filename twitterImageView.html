@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>DredApp</title>
+  <link rel="stylesheet" href="css/chui-android-3.9.2.css">
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="css/chui-3.9.2.js"></script>
+    <style>
+     #carousel {
+      width:320px;
+      height:350px;
+    }
+    p {
+      padding: 0 40px;
+    }
+    .carousel-track img {
+        margin-top: 30px;
+      display: block;
+      height: auto;
+      width: 300px;
+      max-height: 600px;
+      pointer-events: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    } 
+
+    #stuff {
+      padding: 20px;
+    }
+    /* Popup Demo Styles */
+    #popupMessageTarget {
+      opacity: 0;
+      font-size: 14pt;
+      line-height: 16pt;
+      font-weight: 200;
+      font-family: SegoeWP, SegoeUI, HelveticaNeue, Roboto, Sans-serif;
+      padding: 0 15px;
+    }
+    .animatePopupMessage {
+      -webkit-animation-duration: 2s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-name: updatePopupMessage;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-name: updatePopupMessage;
+    }
+    @-webkit-keyframes updatePopupMessage {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    
+    @keyframes updatePopupMessage {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    .horizontal.centered {
+      margin-top: 40px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orientation: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -wekbit-box-pack: center;
+      -wekbit-justify-content: center;
+      -ms-justify-content: center;
+      justify-content: center;
+    }
+    button {
+      display: inline-block;
+      margin: auto;
+      width: 150px;
+    }
+    button img {
+        padding: 0;
+        margin: 0;
+    }
+  </style>
+  <script>
+  
+    var panels = [
+      "<h2>Image 1</h2><img src='images/myPictures/american-football-63109_640.jpg'>",
+      "<h2>Image 2</h2><img src='images/myPictures/couple-168191_640.jpg'>",
+      "<h2>Image 3</h2><img src='images/myPictures/daisy-75190_640.jpg'>",
+      "<h2>Image 4</h2><img src='images/myPictures/dependent-100343_640.jpg'>",
+      "<h2>Image 5</h2><img src='images/myPictures/dreamy-20100_640.jpg'>",
+      "<h2>Image 6</h2><img src='images/myPictures/girl-102831_640.jpg'>",
+      "<h2>Image 7</h2><img src='images/myPictures/lacrosse-165576_640.jpg'>",
+      "<h2>Image 8</h2><img src='images/myPictures/hot-air-balloon-4761_640.jpg'>",
+      "<h2>Image 9</h2><img src='images/myPictures/piercing-123240_640.jpg'>",
+      "<h2>Image 10</h2><img src='images/myPictures/portrait-53899_640.jpg'>",
+      "<h2>Image 11</h2><img src='images/myPictures/quarterback-67701_640.jpg'>",
+      "<h2>Image 12</h2><img src='images/myPictures/rugby-78193_640.jpg'>",
+      "<h2>Image 13</h2><img src='images/myPictures/africa-139343_640.jpg'>",
+      "<h2>Image 14</h2><img src='images/myPictures/baby-19295_640.jpg'>",
+      "<h2>Image 15</h2><img src='images/myPictures/baby-20339_640.jpg'>",
+      "<h2>Image 16</h2><img src='images/myPictures/utah-95032_640.jpg'>",
+      "<h2>Image 17</h2><img src='images/myPictures/germany-70567_640.jpg'>",
+      "<h2>Image 18</h2><img src='images/myPictures/mountain-91385_640.jpg'>",
+      "<h2>Image 17</h2><img src='images/myPictures/germany-70567_640.jpg'>",
+      "<h2>Image 18</h2><img src='images/myPictures/mountain-91385_640.jpg'>"
+      ];
+
+    $(function() {
+      $.UISetupCarousel({ target: '#carousel', panels: panels, loop: true, pagination: true });
+    });
+  </script>
+    <script>
+    $(function() {
+      // This is just an animation for popup callback, 
+      // Not part of popup functionality.
+      $("#popupMessageTarget").on("webkitAnimationEnd", function() {
+        this.className = "";
+        this.textContent = "";
+      });
+      
+      // Bind event to show the popup:
+      $("#openPopup").on("singletap", function() {
+        $.UIPopup({
+          id: "warning",
+          title: 'Save Image?', 
+          cancelButton: 'Cancel', 
+          continueButton: 'Save', 
+          callback: function() {
+            var popupMessageTarget = document.querySelector('#popupMessageTarget');
+            popupMessageTarget.textContent = 'Thanks for staying with us a bit longer.';
+            popupMessageTarget.classList.remove("animatePopupMessage");
+            popupMessageTarget.classList.add("animatePopupMessage");
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <nav class="current">
+      <img src="images/twitter.png" alt="logo" width="50px" float="left" margin-top="30px">&nbsp;&nbsp;  
+        <h1>Album Name</h1>
+        <img src="images/DredLogo.png" alt="logo" width="50px" float="right" margin-top="30px">
+  </nav>
+  <article id="main" class="current">
+    <section> 
+      <div id="carousel"></div>
+      <div id="options">
+          <div class='horizontal centered'>
+            &nbsp;&nbsp;&nbsp;<button class='align-flush' id="openPopup"><img src="images/Arrow-9-512.png" alt="logo" width="30px" float="left" padding="0px"><br></button>
+            <button  class='align-flush' id="openPopup"><img src="images/share-android-2-512.png" alt="logo" width="30px" float="left"></button>
+          </div>          
+      </div>
+    </section>
+  </article>
+</body>
+</html>
